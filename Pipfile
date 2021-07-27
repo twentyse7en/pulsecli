@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+rich = "*"
+requests = "*"
+click = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+pulsecli = {editable = true, path = "."}
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pulsecli
+Version: 0.1.0
+Summary: Browse stock news from pulse.zerodha.com on terminal
+Home-page: https://github.com/twentyse7en/pulsecli
+Author: Abijith Bahuleyan
+Author-email: abijithbahuleyan@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Linux
+Description-Content-Type: text/markdown
+
+# PulseCLI
+
+

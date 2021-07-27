@@ -1,0 +1,3 @@
+[console_scripts]
+pulsecli = pulsecli.pulse_cli:cli
+

@@ -1,0 +1,9 @@
+README.md
+setup.py
+pulsecli.egg-info/PKG-INFO
+pulsecli.egg-info/SOURCES.txt
+pulsecli.egg-info/dependency_links.txt
+pulsecli.egg-info/entry_points.txt
+pulsecli.egg-info/not-zip-safe
+pulsecli.egg-info/requires.txt
+pulsecli.egg-info/top_level.txt
