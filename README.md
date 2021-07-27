@@ -1,7 +1,9 @@
-# PulseCLI
+ <div align="center">
+ <h1> PulseCLI </h1>
+ </div>
 
 <p align="center">
-:zap: Read stock news in cli. :zap:
+:zap: Read stock news in cli :zap:
 </p>
 
 ## Installation
@@ -30,7 +32,7 @@ Options:
   --help                   Show this message and exit.
 ```
 
-If your are in hurry
+If you are in hurry
 
 ```console
 $ pulsecli --limit 20 --s grid
@@ -52,9 +54,9 @@ $ pulsecli --limit 40
 
 ## TODO
 - Maybe filtering keywords, some news regarding phone lauching are basically ads :p
-- Add style
+- Add new style
 
 ## Credits
-[pulse](https://pulse.zerodha.com/) for provide news and [starcli]() for layout.
+[Pulse](https://pulse.zerodha.com/) for provide news and [starcli](https://github.com/hedyhli/starcli) for layout.
 
 Any contribution, feedback and suggestion are welcome.
