@@ -53,6 +53,7 @@ $ pulsecli --limit 40
 </p>
 
 ## TODO
+- By default it shows trending news, may be an option to select other topics
 - Maybe filtering keywords, some news regarding phone lauching are basically ads :p
 - Add new style
 
