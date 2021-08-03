@@ -40,7 +40,7 @@ $ pulsecli --limit 20 -s grid -m
 ```
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/59721339/127202639-7c2ed98d-e000-4ac5-8826-eb528da068bc.png" height=300>
+<img src="https://user-images.githubusercontent.com/59721339/128060214-6c9a0fe7-9c51-4cb8-b8df-aa7f94143572.png" height=300>
 </p>
 
 If you have enough time
