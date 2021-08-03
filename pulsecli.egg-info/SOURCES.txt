@@ -1,5 +1,8 @@
 README.md
+pyproject.toml
 setup.py
+pulsecli/__init__.py
+pulsecli/pulse_cli.py
 pulsecli.egg-info/PKG-INFO
 pulsecli.egg-info/SOURCES.txt
 pulsecli.egg-info/dependency_links.txt

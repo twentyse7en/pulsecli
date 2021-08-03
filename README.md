@@ -29,13 +29,14 @@ Usage: pulsecli [OPTIONS]
 Options:
   -l, --limit INTEGER      limit the number of news. Default: 30
   -s, --style [list|grid]  Output style (list, grid), default is list
+  -m, --minimal            Display news without description and url
   --help                   Show this message and exit.
 ```
 
 If you are in hurry
 
 ```console
-$ pulsecli --limit 20 --s grid
+$ pulsecli --limit 20 -s grid -m
 ```
 
 <p align="center">

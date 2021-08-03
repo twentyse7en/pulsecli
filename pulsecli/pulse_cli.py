@@ -39,7 +39,7 @@ def _extract_data(article):
     return extracted_article
 
 
-def display_list(articles):
+def display_list(articles, minimal):
     LAYOUT_WIDTH = 80
 
     @render_group()
@@ -58,22 +58,23 @@ def display_list(articles):
         yield ""
 
         description = article["desc"]
-        if description != "":
+        if description != "" and not minimal:
             yield Text(description.strip(), style="green")
-        url = article["url"]
-        yield(Text(url, style="dim italic"))
+
+        if not minimal:
+            url = article["url"]
+            yield(Text(url, style="dim italic"))
         yield ""
 
     def column(renderable):
         return Align.center(renderable, width=LAYOUT_WIDTH, pad=False)
 
-    console = Console()
     for article in articles:
         console.print(column(render_article(article)))
     console.print(column(Rule(style="bright_yellow")))
 
 
-def display_grid(articles):
+def display_grid(articles, minimal):
     max_desc_len = 90
     panels = []
     for article in articles:
@@ -83,14 +84,14 @@ def display_grid(articles):
         desc = Text(article["desc"], style="green")
         desc.truncate(max_desc_len, overflow="ellipsis")
         article_summary = Text.assemble(
-            title,
-            "\n",
-            time_elapsed,
-            " ",
-            source,
-            "\n",
-            desc,
-            )
+                    title,
+                    "\n",
+                    time_elapsed,
+                    " ",
+                    source
+                )
+        if not minimal:
+            article_summary = Text.assemble(article_summary, "\n", desc)
         panels.append(Panel(article_summary, expand=True))
     console.print((Columns(panels, width=30, expand=True)))
 
@@ -107,12 +108,13 @@ def _scrape_articles(limit):
     return extracted_articles
 
 
-def _get_news(limit, style):
+def _get_news(limit, style, minimal):
     extracted_articles = _scrape_articles(limit)
-    if style == "grid":
-        display_grid(extracted_articles)
-    else:
-        display_list(extracted_articles)
+    with console.pager(styles=True):
+        if style == "grid":
+            display_grid(extracted_articles, minimal)
+        else:
+            display_list(extracted_articles, minimal)
 
 
 @click.command()
@@ -130,9 +132,15 @@ def _get_news(limit, style):
         type=click.Choice(["list", "grid"], case_sensitive=False),
         help="Output style (list, grid), default is list"
 )
-def cli(limit, style):
+@click.option(
+        "--minimal",
+        "-m",
+        is_flag=True,
+        help="Display news without description and url"
+        )
+def cli(limit, style, minimal):
     try:
-        _get_news(limit, style)
+        _get_news(limit, style, minimal)
     except requests.HTTPError:
         print("Unable to connect to pulse.")
     except requests.ConnectionError:
